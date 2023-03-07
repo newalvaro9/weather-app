@@ -37,18 +37,15 @@ export default function Home() {
 
           const windSBeau = document.getElementById("windbeaufort")
           windSBeau?.setAttribute('src', `/svg/wi-wind-beaufort-${toBeaufort(response.wind.speed)}.svg`)
+
           /* Information */
           const temp = document.getElementById('currentTemp')
           const maxtemp = document.getElementById('maxTemp')
           const mintemp = document.getElementById('minTemp')
           const humidity = document.getElementById('humidity')
-          const wind = document.getElementById('wind')
           temp!.innerHTML = `${Math.round(response.main.temp)}°`
           maxtemp!.innerHTML = `${Math.round(response.main.temp_min)}°`
           mintemp!.innerHTML = `${Math.round(response.main.temp_max)}°`
-          // humidity!.innerHTML = `${response.main.humidity}%`
-          // wind!.innerHTML = `${response.wind.speed}km/h`
-
         } else {
           console.log("NOOOOOT 200")
         }
