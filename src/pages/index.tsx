@@ -43,9 +43,11 @@ export default function Home() {
           const maxtemp = document.getElementById('maxTemp')
           const mintemp = document.getElementById('minTemp')
           const humidity = document.getElementById('humidity')
+          const desc = document.getElementById('desc')
           temp!.innerHTML = `${Math.round(response.main.temp)}°`
           maxtemp!.innerHTML = `${Math.round(response.main.temp_min)}°`
           mintemp!.innerHTML = `${Math.round(response.main.temp_max)}°`
+          desc!.innerHTML = response.weather[0].description.charAt(0).toUpperCase() + response.weather[0].description.slice(1)
         } else {
           console.log("NOOOOOT 200")
         }
@@ -65,6 +67,7 @@ export default function Home() {
         <div id="info" className={styles['info']}>
           <div className={styles['img-div']}>
             <img className={styles['imagen']} id="image" alt="image" />
+            <span className={styles['descripcion']} id="desc"></span>
           </div>
 
           <div className={styles['wrapinfo']}>
