@@ -1,45 +1,128 @@
 .box {
-  background-color: white;
+  background-color: #91AECF;
   border-radius: 50px;
-  position: relative;
   width: 100%;
-  height: 80px;
-  transition: height 0.3s linear;
+  height: min-content;
+}
+
+.subbox {
+  background-color: #91AECF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 50px;
 }
 
 .box input {
+  background-color: #91AECF;
   width: 100%;
-  padding: 20px 20px 20px 20px;
   display: block;
   font-size: 70px;
   width: 90%;
   height: 80px;
   border: none;
-  border-radius: 50px;
   text-transform: uppercase
-}
-
-.box button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 40px;
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 50%;
-  margin: 10px 20px;
-  z-index: 2;
 }
 
 .box input:focus {
   outline: none
 }
 
-.box button:hover {
-  background-color: rgba(66, 31, 68, 0.605);
+.box input::selection {
+  color: black;
+  background-color: #c47ac89a
+}
+
+.magnify {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  margin: 10px 20px;
+  z-index: 2;
+}
+
+.box .magnify:hover {
+  background-color: #421f449a;
+  border-radius: 50%;
+}
+
+.locdot {
+  background: transparent;
+  border: none;
+  cursor: default;
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 12px 20px;
+  z-index: 2;
+}
+
+
+
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 0;
+  transition: height 0.2s linear;
+}
+
+.img-div {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  margin-left: 20px;
+}
+
+.imagen {
+  width: 500px;
+  height: 500px;
+}
+
+.wrapinfo {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.temperature {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 30px;
+}
+
+.maxmin {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+
+.currentTemp {
+  font-size: 80px;
+  font-weight: 300;
+}
+
+.maxTemp {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.minTemp {
+  font-size: 25px;
+  font-weight: 500;
+
 }
