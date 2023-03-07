@@ -73,6 +73,7 @@ export default function Home() {
 
           <div className={styles['wrapinfo']}>
 
+            <div className={styles['weather']}>
               <div className={styles['temperature']}>
                 <span className={styles['currentTemp']} id="currentTemp"></span>
 
@@ -80,6 +81,7 @@ export default function Home() {
                   <span className={styles['maxTemp']} id="maxTemp"></span>
                   <span className={styles['minTemp']} id="minTemp"></span>
                 </div>
+
               </div>
 
               <div className={styles['humidity-container']}>
