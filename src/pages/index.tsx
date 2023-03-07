@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 import getClassName from '@/util/getclassname';
+import toBeaufort from '@/util/tobeaufort'
+
 export default function Home() {
   const [title, setTitle] = useState<string>("Weather App")
   const place = useRef<any>()
@@ -33,6 +35,8 @@ export default function Home() {
           const img = document.getElementById("image")
           img?.setAttribute('src', '/svg/' + getClassName(response) + '.svg')
 
+          const windSBeau = document.getElementById("windbeaufort")
+          windSBeau?.setAttribute('src', `/svg/wi-wind-beaufort-${toBeaufort(response.wind.speed)}.svg`)
           /* Information */
           const temp = document.getElementById('currentTemp')
           const maxtemp = document.getElementById('maxTemp')
@@ -80,6 +84,8 @@ export default function Home() {
 
             <div className={styles['other']}>
               <span className={styles['humidity']} id="humidity"></span>
+            <div className={styles['extra-info']}>
+              <a href='https://en.m.wikipedia.org/wiki/Beaufort_scale#Modern_scale:~:text=along%20the%20shore.-,Modern%20scale,-Edit'><img className={styles['wind-beaufort']} id="windbeaufort"></img></a>
               <span className={styles['wind']} id="wind"></span>
             </div>
 
