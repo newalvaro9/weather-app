@@ -47,6 +47,7 @@ export default function Home() {
           temp!.innerHTML = `${Math.round(response.main.temp)}°`
           maxtemp!.innerHTML = `${Math.round(response.main.temp_min)}°`
           mintemp!.innerHTML = `${Math.round(response.main.temp_max)}°`
+          humidity!.innerHTML = `${response.main.humidity}%`
           desc!.innerHTML = response.weather[0].description.charAt(0).toUpperCase() + response.weather[0].description.slice(1)
         } else {
           console.log("NOOOOOT 200")
@@ -81,9 +82,11 @@ export default function Home() {
                 </div>
               </div>
 
+              <div className={styles['humidity-container']}>
+                <p className={styles['humidity-text']}>Humidity: <span id="humidity"></span></p>
+              </div>
+            </div>
 
-            <div className={styles['other']}>
-              <span className={styles['humidity']} id="humidity"></span>
             <div className={styles['extra-info']}>
               <a href='https://en.m.wikipedia.org/wiki/Beaufort_scale#Modern_scale:~:text=along%20the%20shore.-,Modern%20scale,-Edit'><img className={styles['wind-beaufort']} id="windbeaufort"></img></a>
               <span className={styles['wind']} id="wind"></span>
