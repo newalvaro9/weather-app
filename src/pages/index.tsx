@@ -100,7 +100,7 @@ export default function Home() {
             </div>
 
             <div className={styles['extra-info']}>
-              <a href='https://en.m.wikipedia.org/wiki/Beaufort_scale#Modern_scale:~:text=along%20the%20shore.-,Modern%20scale,-Edit'><img className={styles['wind-beaufort']} id="windbeaufort"></img></a>
+              <a href='https://en.m.wikipedia.org/wiki/Beaufort_scale#Modern_scale:~:text=along%20the%20shore.-,Modern%20scale,-Edit' target='_blank'><img className={styles['wind-beaufort']} id="windbeaufort"></img></a>
               <span className={styles['wind']} id="wind"></span>
             </div>
           </div>
