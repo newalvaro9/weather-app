@@ -111,7 +111,6 @@
   flex-direction: row;
   justify-content: flex-end;
   width: 100%;
-  padding-top: 30px;
   padding-right: 80px;
 }
 
@@ -121,7 +120,6 @@
   padding-top: 25px;
   padding-left: 10px;
 }
-
 
 .currentTemp {
   font-size: 100px;
@@ -147,13 +145,30 @@
   width: 300px;
   height: 300px;
 }
+
 .humidity-container {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding-right: 80px;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 85px;
 }
 
 .humidity-text {
-  margin: 0
+  margin: 0;
+  font-weight: 600;
+}
+
+.container-timezone {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 85px;
+  padding-top: 20px;
+}
+
+.timezone {
+  height: fit-content;
+  padding-left: 40px;
+  font-size: 20px
 }

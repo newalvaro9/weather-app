@@ -7,6 +7,7 @@ import { faLocationDot, faMagnifyingGlass } from '@fortawesome/free-solid-svg-ic
 
 import getClassName from '@/util/getclassname';
 import toBeaufort from '@/util/tobeaufort'
+import toDate from '@/util/todate'
 
 export default function Home() {
   const [title, setTitle] = useState<string>("Weather App")
@@ -43,12 +44,17 @@ export default function Home() {
           const maxtemp = document.getElementById('maxTemp')
           const mintemp = document.getElementById('minTemp')
           const humidity = document.getElementById('humidity')
+          const feelslike = document.getElementById('feelslike')
           const desc = document.getElementById('desc')
+          const tz = document.getElementById('tz')
+
           temp!.innerHTML = `${Math.round(response.main.temp)}°`
           maxtemp!.innerHTML = `${Math.round(response.main.temp_min)}°`
           mintemp!.innerHTML = `${Math.round(response.main.temp_max)}°`
           humidity!.innerHTML = `${response.main.humidity}%`
+          feelslike!.innerHTML = `${Math.round(response.main.feels_like)}°`
           desc!.innerHTML = response.weather[0].description.charAt(0).toUpperCase() + response.weather[0].description.slice(1)
+          tz!.innerHTML = toDate(response.dt * 1000)
         } else {
           console.log("NOOOOOT 200")
         }
@@ -63,6 +69,9 @@ export default function Home() {
           <FontAwesomeIcon className={styles['locdot']} icon={faLocationDot} />
           <input id="textinput" type="text" ref={place}></input>
           <button className={styles['magnify']} onClick={() => showWeather()}><FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon></button>
+        </div>
+        <div className={styles['container-timezone']}>
+          <span className={styles['timezone']} id="tz"></span>
         </div>
 
         <div id="info" className={styles['info']}>
@@ -85,6 +94,7 @@ export default function Home() {
               </div>
 
               <div className={styles['humidity-container']}>
+                <p className={styles['humidity-text']}>Feels like: <span id="feelslike"></span></p>
                 <p className={styles['humidity-text']}>Humidity: <span id="humidity"></span></p>
               </div>
             </div>
@@ -93,8 +103,8 @@ export default function Home() {
               <a href='https://en.m.wikipedia.org/wiki/Beaufort_scale#Modern_scale:~:text=along%20the%20shore.-,Modern%20scale,-Edit'><img className={styles['wind-beaufort']} id="windbeaufort"></img></a>
               <span className={styles['wind']} id="wind"></span>
             </div>
-
           </div>
+
 
         </div>
       </div>
